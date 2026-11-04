@@ -1,0 +1,42 @@
++ cat Dockerfile
+FROM nginx:alpine
+COPY site/index.html /usr/share/nginx/html/index.html
+EXPOSE 80
++ docker build -t codyssey-web:submission .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 119B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:alpine
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 146B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/nginx:alpine@sha256:785835ea65db4bba6f021acc0f3be91b0fef76a53fe41f8588c6698d2aed0606
+#5 resolve docker.io/library/nginx:alpine@sha256:785835ea65db4bba6f021acc0f3be91b0fef76a53fe41f8588c6698d2aed0606 0.0s done
+#5 CACHED
+
+#6 [2/2] COPY site/index.html /usr/share/nginx/html/index.html
+#6 DONE 0.0s
+
+#7 exporting to image
+#7 exporting layers 0.1s done
+#7 exporting manifest sha256:00d4e1a62b81304a3490d4a16056a27aa552951d004f94ca4339aa82b0d96a0b 0.0s done
+#7 exporting config sha256:4fc54fc46e6a3120590df04892db2b4de7e5f164f17cc34aadce75a02bb0e812 0.0s done
+#7 exporting attestation manifest sha256:a41423b2c692dac4d46533938a53d4490a02daff71b476e0c7bf492aa325918c 0.0s done
+#7 exporting manifest list sha256:fa8e788f2c6e710cc21051ee901b9bef8e627462af5ac0ddbbddd1ffb6cdeb51 0.0s done
+#7 naming to docker.io/library/codyssey-web:submission done
+#7 unpacking to docker.io/library/codyssey-web:submission 0.0s done
+#7 DONE 0.2s
++ docker images codyssey-web
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+codyssey-web:submission   fa8e788f2c6e       93.6MB         26.3MB        
+codyssey-web:v1           2e13b6db9a80       93.6MB         26.3MB   U    

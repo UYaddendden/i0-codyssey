@@ -1,0 +1,10 @@
++ chmod 644 practice/permission-test.txt
++ chmod 755 practice/permission-test-dir
++ ls --color=auto -ld practice/permission-test.txt practice/permission-test-dir
+drwxr-xr-x 2 sangwoo sangwoo 4096 Nov  4 17:07 practice/permission-test-dir
+-rw-r--r-- 1 sangwoo sangwoo    0 Nov  4 17:07 practice/permission-test.txt
++ chmod 600 practice/permission-test.txt
++ chmod 700 practice/permission-test-dir
++ ls --color=auto -ld practice/permission-test.txt practice/permission-test-dir
+drwx------ 2 sangwoo sangwoo 4096 Nov  4 17:07 practice/permission-test-dir
+-rw------- 1 sangwoo sangwoo    0 Nov  4 17:07 practice/permission-test.txt

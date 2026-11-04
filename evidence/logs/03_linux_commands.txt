@@ -1,0 +1,31 @@
++ mkdir -p evidence/linux-practice
++ cd evidence/linux-practice
++ pwd
+/home/sangwoo/codyssey/pre-course/evidence/linux-practice
++ ls --color=auto -la
+total 8
+drwxr-xr-x 2 sangwoo sangwoo 4096 Nov  4 17:08 .
+drwxr-xr-x 5 sangwoo sangwoo 4096 Nov  4 17:08 ..
++ touch original.txt
++ echo 'Hello Codyssey Linux'
++ cat original.txt
+Hello Codyssey Linux
++ cp original.txt copied.txt
++ ls --color=auto -l
+total 8
+-rw-r--r-- 1 sangwoo sangwoo 21 Nov  4 17:08 copied.txt
+-rw-r--r-- 1 sangwoo sangwoo 21 Nov  4 17:08 original.txt
++ mv copied.txt renamed.txt
++ ls --color=auto -l
+total 8
+-rw-r--r-- 1 sangwoo sangwoo 21 Nov  4 17:08 original.txt
+-rw-r--r-- 1 sangwoo sangwoo 21 Nov  4 17:08 renamed.txt
++ rm renamed.txt
++ ls --color=auto -la
+total 12
+drwxr-xr-x 2 sangwoo sangwoo 4096 Nov  4 17:08 .
+drwxr-xr-x 5 sangwoo sangwoo 4096 Nov  4 17:08 ..
+-rw-r--r-- 1 sangwoo sangwoo   21 Nov  4 17:08 original.txt
++ cd ../..
++ pwd
+/home/sangwoo/codyssey/pre-course

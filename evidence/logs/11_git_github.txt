@@ -1,0 +1,30 @@
++ echo '=== GIT VERSION ==='
+=== GIT VERSION ===
++ git --version
+git version 2.43.0
++ echo '=== GIT USER NAME ==='
+=== GIT USER NAME ===
++ git config user.name
+UYaddendden
++ echo '=== GIT REPOSITORY ==='
+=== GIT REPOSITORY ===
++ git remote -v
+origin	https://github.com/UYaddendden/i0-codyssey.git (fetch)
+origin	https://github.com/UYaddendden/i0-codyssey.git (push)
++ echo '=== CURRENT BRANCH ==='
+=== CURRENT BRANCH ===
++ git branch --show-current
+main
++ echo '=== COMMIT HISTORY ==='
+=== COMMIT HISTORY ===
++ git log --oneline -5
+8a6c669 Add project README
+be79a2a Merge branch 'main' of https://github.com/UYaddendden/i0-codyssey
+e712617 Initial pre-course setup
+891d519 Initial commit
++ echo '=== WORKING TREE STATUS ==='
+=== WORKING TREE STATUS ===
++ git status --short
+?? README.md:Zone.Identifier
+?? evidence/
+?? practice/permission-test.txt

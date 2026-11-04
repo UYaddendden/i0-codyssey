@@ -1,0 +1,90 @@
++ docker port codyssey-nginx
+80/tcp -> 0.0.0.0:8080
+80/tcp -> [::]:8080
++ docker port codyssey-custom
+80/tcp -> 0.0.0.0:8081
+80/tcp -> [::]:8081
++ docker port codyssey-bind
+80/tcp -> 0.0.0.0:8082
+80/tcp -> [::]:8082
++ curl -i http://localhost:8080
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   896  100   896    0     0  76003      0 --:--:-- --:--:-- --:--:-- 81454
+HTTP/1.1 200 OK
+Server: nginx/1.31.8
+Date: Wed, 04 Nov 2026 08:13:24 GMT
+Content-Type: text/html
+Content-Length: 896
+Last-Modified: Wed, 21 Oct 2026 17:54:44 GMT
+Connection: keep-alive
+ETag: "6ad8fc64-380"
+Accept-Ranges: bytes
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, nginx is successfully installed and working.
+Further configuration is required for the web server, reverse proxy, 
+API gateway, load balancer, content cache, or other features.</p>
+
+<p>For online documentation and support please refer to
+<a href="https://nginx.org/">nginx.org</a>.<br/>
+To engage with the community please visit
+<a href="https://community.nginx.org/">community.nginx.org</a>.<br/>
+For enterprise grade support, professional services, additional 
+security features and capabilities please refer to
+<a href="https://f5.com/nginx">f5.com/nginx</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
++ curl -i http://localhost:8081
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   213  100   213    0     0  41151      0 --:--:-- --:--:-- --:--:-- 42600
+HTTP/1.1 200 OK
+Server: nginx/1.31.8
+Date: Wed, 04 Nov 2026 08:13:24 GMT
+Content-Type: text/html
+Content-Length: 213
+Last-Modified: Mon, 02 Nov 2026 06:20:44 GMT
+Connection: keep-alive
+ETag: "6ae82bbc-d5"
+Accept-Ranges: bytes
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Codyssey Pre-course</title>
+</head>
+<body>
+    <h1>Hello, Codyssey!</h1>
+    <p>My first custom Docker web server.</p>
+</body>
+</html>
++ curl -i http://localhost:8082
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    76  100    76    0     0  21770      0 --:--:-- --:--:-- --:--:-- 25333
+HTTP/1.1 200 OK
+Server: nginx/1.31.8
+Date: Wed, 04 Nov 2026 08:13:24 GMT
+Content-Type: text/html
+Content-Length: 76
+Last-Modified: Mon, 02 Nov 2026 06:31:13 GMT
+Connection: keep-alive
+ETag: "6ae82e31-4c"
+Accept-Ranges: bytes
+
+<h1>Bind Mount Success!</h1><p>Changed without rebuilding Docker image.</p>

@@ -1,0 +1,21 @@
++ echo '=== BEFORE ==='
+=== BEFORE ===
++ cat site/index.html
+<h1>Bind Mount Success!</h1><p>Changed without rebuilding Docker image.</p>
++ curl -s http://localhost:8082
+<h1>Bind Mount Success!</h1><p>Changed without rebuilding Docker image.</p>
++ echo '=== MODIFY ==='
+=== MODIFY ===
++ cp site/index.html site/index.html.backup
++ printf '<h1>Bind Mount Updated!</h1>\n'
++ echo '=== AFTER ==='
+=== AFTER ===
++ cat site/index.html
+<h1>Bind Mount Updated!</h1>
++ curl -s http://localhost:8082
+<h1>Bind Mount Updated!</h1>
++ echo '=== RESTORE ==='
+=== RESTORE ===
++ mv site/index.html.backup site/index.html
++ curl -s http://localhost:8082
+<h1>Bind Mount Success!</h1><p>Changed without rebuilding Docker image.</p>

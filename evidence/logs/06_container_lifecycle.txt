@@ -1,0 +1,12 @@
++ docker stop codyssey-ubuntu
+codyssey-ubuntu
++ docker ps -a --filter name=codyssey-ubuntu
+CONTAINER ID   IMAGE          COMMAND   CREATED         STATUS                                PORTS     NAMES
+642bf49baf6b   ubuntu:24.04   "bash"    2 minutes ago   Exited (137) Less than a second ago             codyssey-ubuntu
++ docker start codyssey-ubuntu
+codyssey-ubuntu
++ docker ps --filter name=codyssey-ubuntu
+CONTAINER ID   IMAGE          COMMAND   CREATED         STATUS                  PORTS     NAMES
+642bf49baf6b   ubuntu:24.04   "bash"    2 minutes ago   Up Less than a second             codyssey-ubuntu
++ docker exec codyssey-ubuntu echo 'Container restarted successfully'
+Container restarted successfully

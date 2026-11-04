@@ -1,0 +1,25 @@
++ echo '=== CREATE VOLUME ==='
+=== CREATE VOLUME ===
++ docker volume create codyssey-data
+codyssey-data
++ echo '=== WRITE DATA ==='
+=== WRITE DATA ===
++ docker run --rm -v codyssey-data:/data alpine sh -c 'echo "Hello from Docker Volume!" > /data/test.txt'
++ echo '=== READ DATA FROM NEW CONTAINER ==='
+=== READ DATA FROM NEW CONTAINER ===
++ docker run --rm -v codyssey-data:/data alpine cat /data/test.txt
+Hello from Docker Volume!
++ echo '=== VOLUME INFORMATION ==='
+=== VOLUME INFORMATION ===
++ docker volume inspect codyssey-data
+[
+    {
+        "CreatedAt": "2026-11-02T06:32:54Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/codyssey-data/_data",
+        "Name": "codyssey-data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
