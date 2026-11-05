@@ -1,0 +1,57 @@
++ echo '=== HELLO WORLD ==='
+=== HELLO WORLD ===
++ docker run --rm hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
++ echo '=== TEMPORARY CONTAINER ==='
+=== TEMPORARY CONTAINER ===
++ docker run --name codyssey-cleanup-test alpine echo 'Cleanup test successful'
+Cleanup test successful
++ echo '=== BEFORE REMOVAL ==='
+=== BEFORE REMOVAL ===
++ docker ps -a --filter name=codyssey-cleanup-test
+CONTAINER ID   IMAGE     COMMAND                  CREATED        STATUS                              PORTS     NAMES
+a0f36315b28c   alpine    "echo 'Cleanup test …"   1 second ago   Exited (0) Less than a second ago             codyssey-cleanup-test
++ echo '=== REMOVE CONTAINER ==='
+=== REMOVE CONTAINER ===
++ docker rm codyssey-cleanup-test
+codyssey-cleanup-test
++ echo '=== AFTER REMOVAL ==='
+=== AFTER REMOVAL ===
++ docker ps -a --filter name=codyssey-cleanup-test
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
++ echo '=== PORT CHECK ==='
+=== PORT CHECK ===
++ ss -ltn
++ grep --color=auto -E ':8080|:8081|:8082'
+LISTEN 0      4096                *:8081            *:*          
+LISTEN 0      4096                *:8080            *:*          
+LISTEN 0      4096                *:8082            *:*          
++ echo '=== GIT LOCAL COMMIT ==='
+=== GIT LOCAL COMMIT ===
++ git log --oneline -1
+77935cc Complete Codyssey pre-course submission
++ echo '=== GIT REMOTE COMMIT ==='
+=== GIT REMOTE COMMIT ===
++ git ls-remote origin refs/heads/main
+77935ccddaf1aff15bf04e62c2cf47ca79aacdb2	refs/heads/main
